@@ -27,9 +27,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.UseStaticFiles();
+app.MapRazorPages();
 
 app.MapGet("/Environment", () => new EnvironmentInfo());
 
